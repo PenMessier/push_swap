@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Elena <Elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: frenna <frenna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 15:49:07 by Elena             #+#    #+#             */
-/*   Updated: 2020/02/12 11:52:28 by Elena            ###   ########.fr       */
+/*   Created: 2020/02/13 09:30:25 by frenna            #+#    #+#             */
+/*   Updated: 2020/02/13 16:16:34 by frenna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pswp.h"
 
-int		main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_arr	*arr;
-	char		*act;
+	char	*act;
 
 	act = NULL;
 	arr = create_arr(ac, av);

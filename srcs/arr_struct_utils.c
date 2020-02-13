@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   arr_struct_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Elena <Elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: frenna <frenna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 16:05:15 by Elena             #+#    #+#             */
-/*   Updated: 2020/02/12 12:12:44 by Elena            ###   ########.fr       */
+/*   Created: 2020/02/13 09:30:15 by frenna            #+#    #+#             */
+/*   Updated: 2020/02/13 16:12:59 by frenna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pswp.h"
 
-t_ar					*create_new(int n)
+t_ar		*create_new(int n)
 {
-	t_ar *new;
+	t_ar	*new;
 
 	if ((new = (t_ar*)malloc(sizeof(t_ar))) == NULL)
 		return (NULL);
@@ -25,9 +25,9 @@ t_ar					*create_new(int n)
 	return (new);
 }
 
-int						get_arr_size(t_ar *ar)
+int			get_arr_size(t_ar *ar)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (ar)
@@ -38,36 +38,39 @@ int						get_arr_size(t_ar *ar)
 	return (i);
 }
 
-static void		create_arr_a(int ac, char **av, t_arr *arr)
+static void	create_arr_a(int ac, char **av, t_arr *arr)
 {
-	int i;
-	int n;
+	int		n;
+	int		i;
+	char	*tmp;
 
-	av = (ac == 2) ? ft_strsplit(av[1], ' ') : av;
 	i = (ac == 2) ? 0 : 1;
-	
-	while ((ac == 2 ? (int)av[i] : i < ac))
+	av = (ac == 2) ? ft_strsplit(av[1], ' ') : av;
+	while ((ac == 2) ? (int)av[i] : i < ac)
 	{
 		if (!ft_strcmp(av[i], "-v"))
 			arr->flag = 1;
 		else
 		{
 			n = ft_atoi(av[i]);
-			if (ft_strcmp(ft_itoa(n), av[i]) || find_duplic(arr->a, n))
+			if (ft_strcmp((tmp = ft_itoa(n)), av[i]) || find_duplic(arr->a, n)
+			|| !new_to_ar(&arr->a, n))
+			{
+				free(tmp);
 				put_error(&arr, ft_free_array((ac == 2) ? av : NULL, 1));
-			if ((!new_to_ar(&arr->a, n)))
-				put_error(&arr, ft_free_array((ac == 2) ? av : NULL, 1));
+			}
+			free(tmp);
 		}
 		i++;
 	}
 	ft_free_array((ac == 2) ? av : NULL, 1);
 }
 
-t_arr					*create_arr(int ac, char **av)
+t_arr		*create_arr(int ac, char **av)
 {
-	t_arr *arr;
+	t_arr	*arr;
 
-	if ((arr = (t_arr*)malloc(sizeof(t_arr))) == NULL)
+	if (!(arr = (t_arr*)malloc(sizeof(t_arr))))
 		put_error(&arr, 1);
 	arr->a = NULL;
 	arr->b = NULL;

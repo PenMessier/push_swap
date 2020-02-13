@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Elena <Elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: frenna <frenna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 13:36:52 by frenna            #+#    #+#             */
-/*   Updated: 2020/02/12 10:28:57 by Elena            ###   ########.fr       */
+/*   Created: 2020/02/13 09:31:15 by frenna            #+#    #+#             */
+/*   Updated: 2020/02/13 09:34:14 by frenna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int			main(int ac, char **av)
 	else if (arr->si_a == 5)
 		five_sort(arr);
 	else
-	{		
+	{
 		pb(arr);
 		pa(arr);
 		up_min(arr);

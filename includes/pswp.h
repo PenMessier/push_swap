@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pswp.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Elena <Elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: frenna <frenna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 15:31:37 by Elena             #+#    #+#             */
-/*   Updated: 2020/02/12 12:16:24 by Elena            ###   ########.fr       */
+/*   Updated: 2020/02/13 10:42:38 by frenna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct		s_ar
 	int				val;
 	int				i;
 	int				sort;
-	struct s_ar	*next;
+	struct s_ar		*next;
 }					t_ar;
 
 typedef struct		s_arr
@@ -30,12 +30,12 @@ typedef struct		s_arr
 	t_ar			*max_sort;
 	int				si_a;
 	int				si_b;
-	int				opt_a;
-	int				opt_b;
-	int				opt_pl;
 	int				tmp_a;
 	int				tmp_b;
 	int				tmp_pl;
+	int				opt_a;
+	int				opt_b;
+	int				opt_pl;
 	int				print;
 	int				act_count;
 	int				flag;

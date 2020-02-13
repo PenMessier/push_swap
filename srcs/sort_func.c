@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_func.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Elena <Elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: frenna <frenna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 16:04:30 by Elena             #+#    #+#             */
-/*   Updated: 2020/02/12 11:08:32 by Elena            ###   ########.fr       */
+/*   Created: 2020/02/13 09:31:29 by frenna            #+#    #+#             */
+/*   Updated: 2020/02/13 09:38:13 by frenna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pswp.h"
 
-void	pre_sort(t_arr *arr)
+void		pre_sort(t_arr *arr)
 {
-	int act;
+	int		act;
 
 	index_ar(arr->a);
 	arr->max_sort = get_max(arr->a);
@@ -27,9 +27,9 @@ void	pre_sort(t_arr *arr)
 	make_act(act > 0 ? "ra" : "rra", act, arr);
 }
 
-void	pb(t_arr *arr)
+void		pb(t_arr *arr)
 {
-	t_ar *a;
+	t_ar	*a;
 
 	a = arr->a;
 	while (a && a->i != arr->max_sort->i)
@@ -39,7 +39,7 @@ void	pb(t_arr *arr)
 	}
 }
 
-void	sort_push_a(t_arr *arr)
+void		sort_push_a(t_arr *arr)
 {
 	arr->tmp_b = ft_abs(arr->opt_b);
 	arr->tmp_a = ft_abs(arr->opt_a);
@@ -61,9 +61,9 @@ void	sort_push_a(t_arr *arr)
 		make_act("ra", 1, arr);
 }
 
-void	pa(t_arr *arr)
+void		pa(t_arr *arr)
 {
-	t_ar *tmp_b;
+	t_ar	*tmp_b;
 	int		acts_n;
 	int		acts;
 
@@ -90,7 +90,7 @@ void	pa(t_arr *arr)
 	}
 }
 
-void	up_min(t_arr *arr)
+void		up_min(t_arr *arr)
 {
 	t_ar	*tmp_a;
 	t_ar	*min;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   sort_func_extra.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Elena <Elena@student.42.fr>                +#+  +:+       +#+        */
+/*   By: frenna <frenna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 15:27:16 by Elena             #+#    #+#             */
-/*   Updated: 2020/02/12 11:02:27 by Elena            ###   ########.fr       */
+/*   Created: 2020/02/13 09:31:22 by frenna            #+#    #+#             */
+/*   Updated: 2020/02/13 10:41:02 by frenna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void		index_ar(t_ar *ar)
 t_ar		*get_max(t_ar *ar)
 {
 	t_ar	*tmp;
-	t_ar *first;
-	t_ar *max;
+	t_ar	*first;
+	t_ar	*max;
 	int		size;
 	int		i;
 
@@ -64,7 +64,7 @@ int			est_act_count(int size, int i)
 
 int			get_right_place(t_ar *ar, int val)
 {
-	t_ar *new;
+	t_ar	*new;
 	int		diff;
 
 	new = NULL;
